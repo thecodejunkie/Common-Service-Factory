@@ -1,6 +1,6 @@
 ﻿namespace CommonServiceFactory.Tests
 {
-    public class FakeService : IFakeServiceContract
+    public class FakeService : IFakeService
     {
         public void DoWork()
         {

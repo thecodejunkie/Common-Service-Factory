@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ActionNull" xml:space="preserve">
+    <value>The action cannot be null.</value>
+  </data>
   <data name="BaseAddressesNull" xml:space="preserve">
     <value>The base addresses cannot be null.</value>
   </data>

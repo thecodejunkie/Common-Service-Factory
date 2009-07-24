@@ -12,7 +12,7 @@ namespace CommonServiceFactory.Tests
         {
             var factory =
                 new ServiceHostFactory();
-
+            
             var host =
                 factory.CreateServiceHost(typeof(FakeService).AssemblyQualifiedName, new[] { new Uri("net.tcp://localhost:8080") });
 

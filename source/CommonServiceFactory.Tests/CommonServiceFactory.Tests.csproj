@@ -68,12 +68,16 @@
     </Compile>
     <Compile Include="AssertExtensions.cs" />
     <Compile Include="Catch.cs" />
+    <Compile Include="ConventionsContainerTests.cs" />
+    <Compile Include="DefaultConventionsTests.cs" />
+    <Compile Include="FakeConventions.cs" />
     <Compile Include="FakeService.cs" />
-    <Compile Include="IFakeServiceContract.cs" />
+    <Compile Include="IFakeService.cs" />
     <Compile Include="ServiceBehaviorTests.cs" />
     <Compile Include="ServiceHostFactoryTests.cs" />
     <Compile Include="ServiceHostTests.cs" />
     <Compile Include="ServiceInstanceProviderTests.cs" />
+    <Compile Include="SetupExpressionTests.cs" />
     <Compile Include="WebServiceHostFactoryTests.cs" />
     <Compile Include="WebServiceHostTests.cs" />
   </ItemGroup>

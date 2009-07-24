@@ -58,7 +58,7 @@ namespace CommonServiceFactory.Tests
         {
             var host = 
                 new ServiceHost(typeof(FakeService), new[] { new Uri("net.tcp://localhost:8081") });
-            host.AddServiceEndpoint(typeof(IFakeServiceContract), new NetTcpBinding(), "net.tcp://localhost:8081/MyService");
+            host.AddServiceEndpoint(typeof(IFakeService), new NetTcpBinding(), "net.tcp://localhost:8081/MyService");
             host.Open();
 
             host.Description.Behaviors.ShouldContainType<ServiceBehavior>();

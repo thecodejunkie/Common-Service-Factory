@@ -61,6 +61,15 @@ namespace CommonServiceFactory.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The action cannot be null..
+        /// </summary>
+        public static string ActionNull {
+            get {
+                return ResourceManager.GetString("ActionNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The base addresses cannot be null..
         /// </summary>
         public static string BaseAddressesNull {

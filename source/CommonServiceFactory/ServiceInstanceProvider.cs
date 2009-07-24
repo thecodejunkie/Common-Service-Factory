@@ -50,7 +50,16 @@ namespace CommonServiceFactory
         /// <param name="message">The message that triggered the creation of a service object.</param>
         public object GetInstance(InstanceContext instanceContext, Message message)
         {
-            return ServiceLocator.Current.GetInstance(this.ServiceType);
+            var conventions =
+                HostFactory.Conventions.Get(this.ServiceType);
+
+            var contractTypeName =
+                conventions.GetServiceContractName(this.ServiceType);
+
+            var contractType =
+                this.ServiceType.GetInterface(contractTypeName, true);
+
+            return ServiceLocator.Current.GetInstance(contractType ?? this.ServiceType);
         }
 
         /// <summary>

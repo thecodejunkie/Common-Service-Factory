@@ -58,7 +58,16 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Conventions\ConventionsContainer.cs" />
+    <Compile Include="Conventions\IConventionsContainer.cs" />
+    <Compile Include="Conventions\SetupExpression.cs" />
+    <Compile Include="Conventions\ISetupBehavior.cs" />
+    <Compile Include="Conventions\ISetupExpression.cs" />
+    <Compile Include="Conventions\DefaultConventions.cs" />
     <Compile Include="HostFactory.cs" />
+    <Compile Include="HostFactoryOfT.cs" />
+    <Compile Include="Conventions\IConventions.cs" />
+    <Compile Include="IHideObjectMembers.cs" />
     <Compile Include="Resources\ErrorMessages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

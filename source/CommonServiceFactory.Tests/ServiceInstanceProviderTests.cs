@@ -32,13 +32,13 @@ namespace CommonServiceFactory.Tests
     }
 
     [TestFixture]
-    public class when_getting_instance
+    public class when_getting_instance_with_service_contract_name_following_default_naming_convention
     {
         [Test]
-        public void foo()
+        public void should_query_container_with_service_contract_type()
         {
             var mock = new Mock<IServiceLocator>();
-            mock.Setup(m => m.GetInstance(typeof(FakeService))).Returns(new FakeService());
+            mock.Setup(m => m.GetInstance(typeof(IFakeService))).Returns(new FakeService());
 
             ServiceLocator.SetLocatorProvider(() => mock.Object);
 
