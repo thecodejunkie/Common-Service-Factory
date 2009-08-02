@@ -14,28 +14,28 @@ namespace CommonServiceFactory.Conventions
         /// </summary>
         public SetupExpression()
         {
-            this.Conventions = new Dictionary<Type, IConventions>();
-            this.Default = new DefaultConventions();
+            this.Conventions = new Dictionary<Type, Func<IConventions>>();
+            this.Default = () => new DefaultConventions();
         }
 
         /// <summary>
         /// Gets or sets the registered convetions.
         /// </summary>
         /// <value>An <see cref="T:System.Collections.Generic.IDictionary{TKey,TValue}"/> instance.</value>
-        private IDictionary<Type, IConventions> Conventions { get; set; }
+        private IDictionary<Type, Func<IConventions>> Conventions { get; set; }
 
         /// <summary>
         /// Gets or sets the <see cref="T:CommonServiceFactory.Conventions.IConventions"/> that is currently being configured.
         /// </summary>
         /// <value>An <see cref="T:CommonServiceFactory.Conventions.IConventions"/> instance.</value>
-        private IConventions Current { get; set; }
+        private Func<IConventions> Current { get; set; }
         
         /// <summary>
         /// Gets or set the default <see cref="T:CommonServiceFactory.Conventions.IConventions"/> implementation
         /// to use when no other match can be found in the container.
         /// </summary>
         /// <value>A <see cref="T:CommonServiceFactory.Conventions.IConventions"/> instance.</value>
-        private IConventions Default { get; set; }
+        private Func<IConventions> Default { get; set; }
 
         /// <summary>
         /// Sets the current conventions as the default conventions.
@@ -70,7 +70,7 @@ namespace CommonServiceFactory.Conventions
             var conventions =
                 (this.Conventions.ContainsKey(serviceType)) ? this.Conventions[serviceType] : this.Default;
 
-            return conventions;
+            return conventions.Invoke();
         }
 
         /// <summary>
@@ -80,7 +80,18 @@ namespace CommonServiceFactory.Conventions
         /// <returns>A <see cref="T:CommonServiceFactory.Conventions.ISetupBehavior"/> instance.</returns>
         public ISetupBehavior Use<TConventions>() where TConventions : IConventions, new()
         {
-            this.Current = new TConventions();
+            this.Current = () => new TConventions();
+            return this;
+        }
+
+        /// <summary>
+        /// Uses the specified action to register a <see cref="T:CommonServiceFactory.Conventions.IConventions"/> factory.
+        /// </summary>
+        /// <param name="factory">The factory action.</param>
+        /// <returns>A <see cref="T:CommonServiceFactory.Conventions.ISetupBehavior"/> instance.</returns>
+        public ISetupBehavior Use(Func<IConventions> factory)
+        {
+            this.Current = factory;
             return this;
         }
     }

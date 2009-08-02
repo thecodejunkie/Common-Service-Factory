@@ -53,6 +53,24 @@ namespace CommonServiceFactory.Tests
     }
 
     [TestFixture]
+    public class when_registering_conventions_using_lambda
+    {
+        [Test]
+        public void should_return_conventions_when_retrived()
+        {
+            var expression =
+                new SetupExpression();
+
+            expression.Use(() => new FakeConventions()).For<FakeService>();
+
+            var conventions =
+                expression.Get(typeof(FakeService));
+
+            conventions.ShouldBeOfType(typeof(FakeConventions));
+        }
+    }
+
+    [TestFixture]
     public class when_retriving_conventions_for_registered_type
     {
         [Test]

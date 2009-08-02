@@ -20,5 +20,12 @@ namespace CommonServiceFactory.Conventions
         /// <typeparam name="TConventions"></typeparam>
         /// <returns>A <see cref="T:CommonServiceFactory.Conventions.ISetupBehavior"/> instance.</returns>
         ISetupBehavior Use<TConventions>() where TConventions : IConventions, new();
+
+        /// <summary>
+        /// Uses the specified action to register a <see cref="T:CommonServiceFactory.Conventions.IConventions"/> factory.
+        /// </summary>
+        /// <param name="factory">The factory action.</param>
+        /// <returns>A <see cref="T:CommonServiceFactory.Conventions.ISetupBehavior"/> instance.</returns>
+        ISetupBehavior Use(Func<IConventions> factory);
     }
 }
