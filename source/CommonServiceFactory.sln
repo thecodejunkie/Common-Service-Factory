@@ -1,14 +1,14 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonServiceFactory", "CommonServiceFactory\CommonServiceFactory.csproj", "{7EBF5DD4-38DD-4DD9-A5F1-B12FFD4B023F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonServiceFactory.Tests", "CommonServiceFactory.Tests\CommonServiceFactory.Tests.csproj", "{AFDC1601-C78E-4730-87BA-C55D49A26C5D}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A8577158-657B-4E7F-AA8A-095D951803A1}"
 	ProjectSection(SolutionItems) = preProject
 		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonServiceFactory", "CommonServiceFactory\CommonServiceFactory.csproj", "{7EBF5DD4-38DD-4DD9-A5F1-B12FFD4B023F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonServiceFactory.Tests", "CommonServiceFactory.Tests\CommonServiceFactory.Tests.csproj", "{AFDC1601-C78E-4730-87BA-C55D49A26C5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

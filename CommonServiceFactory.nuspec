@@ -1,0 +1,8 @@
+<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>CommonServiceFactory</id>
+    <version>0.2.1</version>
+    <authors>Andreas Håkansson</authors>
+    <description>Provides service factory implementaions built on top of the Common Service Locator library.</description>
+  </metadata>
+</package>
