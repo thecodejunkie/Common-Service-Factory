@@ -34,14 +34,14 @@ namespace CommonServiceFactory.Tests
 
         public static void ShouldBeOfType(this object asserted, Type expected)
         {
-            Assert.IsInstanceOfType(expected, asserted);
+            Assert.IsInstanceOf(expected, asserted);
         }
 
         public static void ShouldNotBeOfType<T>(this object assertedType)
         {
             if (assertedType != null)
             {
-                Assert.IsNotInstanceOfType(typeof(T), assertedType);
+                Assert.IsNotInstanceOf(typeof(T), assertedType);
             }
         }
 
