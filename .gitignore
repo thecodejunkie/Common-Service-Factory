@@ -14,11 +14,11 @@
 *.log
 *.lib
 *.sbr
-[Bb]in
-[Dd]ebug*/
-obj/
-[Rr]elease*/
-_ReSharper*/
+[Bb]in/
+[Dd]ebug/
+[Oo]bj/
+[Rr]elease/
+_[Rr]e[Ss]harper.*/
 [Pp]ackage/*
 build/
 TestResult.xml
